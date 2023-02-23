@@ -9,21 +9,21 @@ public class TestDrive {
         ferrari.Acelerar();
         ferrari.Acelerar();
         ferrari.Acelerar();
-        System.out.println(ferrari);
+        System.out.println("Ferrari " + ferrari);
 
         ferrari.Frear();
         ferrari.Frear();
-        System.out.println(ferrari);
+        System.out.println("Ferrari " + ferrari);
 
         corola.Acelerar();
         corola.Acelerar();
         corola.Acelerar();
-        System.out.println(corola);
+        System.out.println("Corola " + corola);
 
         corola.Frear();
         corola.Frear();
 
-        System.out.println(corola);
+        System.out.println("Corola " + corola);
 
     }
 }
