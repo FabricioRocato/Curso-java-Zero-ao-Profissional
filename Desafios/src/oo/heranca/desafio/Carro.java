@@ -2,18 +2,20 @@ package oo.heranca.desafio;
 
 public class Carro {
 
-    int velocidadeAtual = 60;
+    int velocidadeAtual;
 
-    int Acelerar(){
+    void Acelerar(){
         velocidadeAtual += 5;
-        return velocidadeAtual;
     }
 
-    int Frear(){
-        if (velocidadeAtual > 0) {
+    void Frear(){
+        if (velocidadeAtual >= 5) {
             velocidadeAtual -= 5;
-            return velocidadeAtual;
+        } else {
+            velocidadeAtual = 0;
         }
-        return velocidadeAtual;
+    }
+    public String toString() {
+        return "Velocidade atual é " + velocidadeAtual + " Mph";
     }
 }
