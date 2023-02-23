@@ -10,10 +10,6 @@ public class Carro {
     int velocidadeAtual;
     int delta = 5;
 
-    Carro(){
-        this(0,250);
-    }
-
     void Acelerar(){
         if (velocidadeAtual + delta > VELOCIDADE_MAXIMA) {
             velocidadeAtual = VELOCIDADE_MAXIMA;
