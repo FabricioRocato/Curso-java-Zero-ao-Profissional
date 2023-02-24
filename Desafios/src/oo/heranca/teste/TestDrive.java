@@ -5,6 +5,11 @@ import oo.heranca.desafio.Corola;
 import oo.heranca.desafio.Ferrari;
 
 public class TestDrive extends Carro{
+
+    protected TestDrive(int velocidadeMaxima) {
+        super(velocidadeMaxima);
+    }
+
     public static void main(String[] args) {
 
         Carro ferrari = new Ferrari();

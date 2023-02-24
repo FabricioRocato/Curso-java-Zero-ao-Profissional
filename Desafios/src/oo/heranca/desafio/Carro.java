@@ -2,13 +2,13 @@ package oo.heranca.desafio;
 
 public class Carro {
 
-    public Carro(){
-        this.velocidadeAtual = velocidadeAtual;
-        this.VELOCIDADE_MAXIMA = VELOCIDADE_MAXIMA;
-    }
-    int VELOCIDADE_MAXIMA;
+    public final int VELOCIDADE_MAXIMA;
     int velocidadeAtual;
     int delta = 5;
+
+    protected Carro(int velocidadeMaxima){
+        VELOCIDADE_MAXIMA = velocidadeMaxima;
+    }
 
     public void Acelerar(){
         if (velocidadeAtual + delta > VELOCIDADE_MAXIMA) {
