@@ -12,10 +12,10 @@ public class TestDrive extends Carro{
 
     public static void main(String[] args) {
 
-        Carro ferrari = new Ferrari();
-        Corola corola = new Corola();
-        
+        Ferrari ferrari = new Ferrari(400);
+
         ferrari.Acelerar();
+        ferrari.ligarTurbo();
         ferrari.Acelerar();
         ferrari.Acelerar();
         System.out.println("Ferrari " + ferrari);
@@ -23,6 +23,8 @@ public class TestDrive extends Carro{
         ferrari.Frear();
         ferrari.Frear();
         System.out.println("Ferrari " + ferrari);
+
+        Carro corola = new Corola();
 
         corola.Acelerar();
         corola.Acelerar();
