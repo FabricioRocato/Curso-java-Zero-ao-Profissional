@@ -15,7 +15,13 @@ public class TestDrive extends Carro{
         Ferrari ferrari = new Ferrari(400);
 
         ferrari.Acelerar();
+
         ferrari.ligarTurbo();
+        ferrari.ligarAr();
+        ferrari.desligarAr();
+
+        System.out.println(ferrari.velocidadeDoAr());
+
         ferrari.Acelerar();
         ferrari.Acelerar();
         System.out.println("Ferrari " + ferrari);
