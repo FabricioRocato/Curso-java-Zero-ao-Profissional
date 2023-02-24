@@ -2,15 +2,16 @@ package oo.heranca.desafio;
 
 public class Ferrari extends Carro{
 
-    Ferrari(){
-        super(10,315);
+    public Ferrari(){
+        super();
     }
+
     @Override
-    void Acelerar(){
+    public void Acelerar(){
         velocidadeAtual += 15;
     }
 
-    void Frear(){
+    public void Frear(){
         if (velocidadeAtual >= 15) {
             velocidadeAtual -= 15;
         } else {

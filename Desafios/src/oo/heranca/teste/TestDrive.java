@@ -1,6 +1,10 @@
-package oo.heranca.desafio;
+package oo.heranca.teste;
 
-public class TestDrive {
+import oo.heranca.desafio.Carro;
+import oo.heranca.desafio.Corola;
+import oo.heranca.desafio.Ferrari;
+
+public class TestDrive extends Carro{
     public static void main(String[] args) {
 
         Carro ferrari = new Ferrari();
