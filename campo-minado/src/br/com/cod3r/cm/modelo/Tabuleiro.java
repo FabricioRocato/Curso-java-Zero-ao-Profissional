@@ -64,7 +64,7 @@ public class Tabuleiro {
         } while (minasArmadas < minas);
     }
 
-    boolean objeticoAlcancado() {
+    public boolean objeticoAlcancado() {
         return campos.stream().allMatch(c -> c.objeticoAlcancado());
     }
 
