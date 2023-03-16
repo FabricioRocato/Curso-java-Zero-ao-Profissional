@@ -1,5 +1,6 @@
 package br.com.cod3r.cm.modelo;
 
+import br.com.cod3r.cm.excecao.ExplosaoException;
 import br.com.cod3r.cm.visao.TabuleiroConsole;
 
 import java.util.ArrayList;
@@ -25,10 +26,15 @@ public class Tabuleiro {
     }
 
     public void abrir(int linha, int coluna){
-        campos.parallelStream()
-                .filter(c -> c.getLinha() == linha && c.getColuna() == coluna)
-                .findFirst()
-                .ifPresent(c -> c.abrir());
+        try {
+            campos.parallelStream()
+                    .filter(c -> c.getLinha() == linha && c.getColuna() == coluna)
+                    .findFirst()
+                    .ifPresent(c -> c.abrir());
+        } catch (ExplosaoException e) {
+            campos.forEach(c -> c.setAberto(true));
+            throw e;
+        }
     }
 
     public void alterarMarcacao(int linha, int coluna){
@@ -56,7 +62,8 @@ public class Tabuleiro {
 
     private void sortearMinas() {
         long minasArmadas = 0;
-        Predicate<Campo> minado = c ->c.isMinado();
+        Predicate<Campo> minado = c -> c.isMinado();
+
         do {
             int aleatorio = (int) (Math.random() * campos.size());
             campos.get(aleatorio).minar();
@@ -75,6 +82,13 @@ public class Tabuleiro {
 
     public String toString() {
         StringBuilder sb = new StringBuilder();
+
+        for(int c = 0; c <colunas; c++) {
+            sb.append(" ");
+            sb.append(c);
+            sb.append(" ");
+        }
+        sb.append("\n");
 
         int i = 0;
         for (int l = 0; l < linhas; l++) {
